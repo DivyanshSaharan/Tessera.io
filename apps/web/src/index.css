@@ -1,9 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --color-tessera-50: #f0f4ff;
+  --color-tessera-100: #dbe4ff;
+  --color-tessera-200: #bac8ff;
+  --color-tessera-300: #91a7ff;
+  --color-tessera-400: #748ffc;
+  --color-tessera-500: #5c7cfa;
+  --color-tessera-600: #4c6ef5;
+  --color-tessera-700: #4263eb;
+  --color-tessera-800: #3b5bdb;
+  --color-tessera-900: #364fc7;
+  --color-tessera-950: #1e3a8a;
+}
 
 :root {
-  font-family: "Inter", system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;

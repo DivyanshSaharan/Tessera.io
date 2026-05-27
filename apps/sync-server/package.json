@@ -18,7 +18,8 @@
     "socket.io": "^4.8.0",
     "yjs": "^13.6.0",
     "y-protocols": "^1.0.6",
-    "lib0": "^0.2.99"
+    "lib0": "^0.2.99",
+    "bullmq": "^5.34.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",

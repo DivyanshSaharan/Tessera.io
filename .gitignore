@@ -1,6 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Build output
 dist/
@@ -18,6 +17,8 @@ dist/
 .idea/
 *.swp
 *.swo
+*.sublime-workspace
+*.sublime-project
 
 # OS
 .DS_Store
@@ -29,9 +30,20 @@ __pycache__/
 *.pyo
 .venv/
 venv/
+.mypy_cache/
+.ruff_cache/
 
 # Logs
 *.log
-npm-debug.log*
 
+# Docker
+docker-compose.override.yml
 
+# Coverage
+coverage/
+.nyc_output/
+
+# TypeScript build artifacts
+*.tsbuildinfo
+*.d.ts.map
+*config.d.ts

@@ -22,7 +22,9 @@
     "@tessera/shared-types": "*",
     "yjs": "^13.6.0",
     "y-protocols": "^1.0.6",
-    "lib0": "^0.2.99"
+    "lib0": "^0.2.99",
+    "socket.io-client": "^4.8.0"
+
   },
   "devDependencies": {
     "typescript": "^5.8.0"

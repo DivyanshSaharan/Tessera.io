@@ -80,3 +80,45 @@ export interface Participant {
   /** Hex color assigned for cursor/selection rendering. */
   readonly cursorColor: string;
 }
+
+export interface SyncClientToServerEvents {
+  readonly "join-room": (payload: {
+    readonly roomId: string;
+    readonly participant: Participant;
+  }) => void;
+  readonly "sync-step-1": (stateVector: Uint8Array) => void;
+  readonly "sync-step-2": (diff: Uint8Array) => void;
+  readonly "sync-update": (update: Uint8Array) => void;
+  readonly "awareness-update": (update: Uint8Array) => void;
+  readonly "execute-code": (payload: {
+    readonly code: string;
+    readonly language: SupportedLanguage;
+  }) => void;
+}
+
+export interface SyncServerToClientEvents {
+  readonly "sync-step-1": (stateVector: Uint8Array) => void;
+  readonly "sync-step-2": (diff: Uint8Array) => void;
+  readonly "sync-update": (update: Uint8Array) => void;
+  readonly "awareness-update": (update: Uint8Array) => void;
+  readonly "room-joined": (payload: {
+    readonly roomId: string;
+    readonly participants: readonly Participant[];
+  }) => void;
+  readonly "execution-result": (result: ExecutionResult) => void;
+}
+
+export interface SyncConnectionConfig {
+  readonly serverUrl: string;
+  readonly roomId: string;
+  readonly participant: Participant;
+}
+
+export type SandboxRuntime = "runc" | "runsc";
+
+export interface SandboxConfig {
+  readonly runtime: SandboxRuntime;
+  readonly memoryLimitMb: number;
+  readonly cpuQuota: number;
+  readonly networkDisabled: boolean;
+}
